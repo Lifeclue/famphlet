@@ -31,5 +31,5 @@ class StandardSiteItemService(val itemStore: SiteItemStore) : SiteItemService {
         return itemStore.deleteById(id) ?: throw notFound(id)
     }
 
-    private fun notFound(id: Long) = IllegalArgumentException("${id}에 해당하는 즐겨찾기를 찾을 수 없습니다.")
+    private fun notFound(id: Long) = SiteNotFoundException(id)
 }
